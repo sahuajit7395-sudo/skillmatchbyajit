@@ -281,9 +281,9 @@ const HomeScreen: React.FC<HomeTabProps> = ({ navigation }) => {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.screenContainer}>
         <Text style={styles.welcomeLabel}>Welcome Back 👋</Text>
-        <Text style={styles.welcomeTitle}>Disaster Relief Connect</Text>
+        <Text style={styles.welcomeTitle}>SkillMatch Connect</Text>
         <Text style={styles.welcomeSubtitle}>
-          Quickly access active disaster events, track your applications, and
+          Quickly access active relief events, track your applications, and
           manage operations.
         </Text>
 
@@ -298,7 +298,7 @@ const HomeScreen: React.FC<HomeTabProps> = ({ navigation }) => {
             <View style={styles.featureContent}>
               <Text style={styles.featureTitle}>Browse Events</Text>
               <Text style={styles.featureDescription}>
-                Explore current disaster relief opportunities across regions.
+                Explore volunteer opportunities and community events near you.
               </Text>
             </View>
           </TouchableOpacity>
@@ -475,9 +475,9 @@ const EventDetailScreen: React.FC<EventDetailProps> = ({ route, navigation }) =>
         <View style={styles.detailSection}>
           <Text style={styles.detailSectionTitle}>Description</Text>
           <Text style={styles.detailText}>
-            This is a demo description for the selected disaster relief event.
-            In a real app, coordinators would provide on-ground details,
-            logistics, safety information, and expectations for volunteers.
+            This is a demo description for the selected event. In a real app,
+            coordinators would share logistics, safety information, and
+            expectations for volunteers.
           </Text>
         </View>
 
