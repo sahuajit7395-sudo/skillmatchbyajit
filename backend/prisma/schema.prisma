@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum EventStatus {
+  Upcoming
+  Ongoing
+  Completed
+}
+
+model Volunteer {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  events    Event[]
+
+  @@index([name])
+}
+
+model Event {
+  id                  String       @id @default(cuid())
+  title               String
+  description         String
+  status              EventStatus  @default(Upcoming)
+  assignedVolunteerId String?
+  assignedVolunteer   Volunteer?   @relation(fields: [assignedVolunteerId], references: [id], onDelete: SetNull)
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}

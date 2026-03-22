@@ -3,15 +3,14 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../App';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Register'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
-const RegisterScreen: React.FC<Props> = ({ navigation }) => {
+const LoginScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Create Account</Text>
-      <Text style={styles.subtitle}>Join SkillMatch as a volunteer or organizer</Text>
+      <Text style={styles.title}>SkillMatch</Text>
+      <Text style={styles.subtitle}>Connect volunteers with meaningful events</Text>
 
-      <TextInput placeholder="Full name" style={styles.input} />
       <TextInput placeholder="Email" style={styles.input} keyboardType="email-address" />
       <TextInput placeholder="Password" style={styles.input} secureTextEntry />
 
@@ -19,17 +18,17 @@ const RegisterScreen: React.FC<Props> = ({ navigation }) => {
         style={styles.primaryButton}
         onPress={() => navigation.replace('Home')}
       >
-        <Text style={styles.primaryButtonText}>Sign up</Text>
+        <Text style={styles.primaryButtonText}>Login</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={styles.linkText}>Back to login</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+        <Text style={styles.linkText}>Create a new account</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default RegisterScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 8,
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: '#555',
-    marginBottom: 24,
+    marginBottom: 32,
   },
   input: {
     borderWidth: 1,
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   primaryButton: {
-    backgroundColor: '#16a34a',
+    backgroundColor: '#2563eb',
     borderRadius: 8,
     paddingVertical: 12,
     alignItems: 'center',
@@ -78,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
 
 
 

@@ -3,7 +3,10 @@
 # dependencies
 node_modules/
 
-# Expo
+# Expo (app lives in frontend/)
+frontend/.expo/
+frontend/dist/
+frontend/web-build/
 .expo/
 dist/
 web-build/
@@ -32,6 +35,11 @@ yarn-error.*
 
 # local env files
 .env*.local
+backend/.env
+
+# SQLite (SkillMatch API)
+backend/prisma/*.db
+backend/prisma/*.db-journal
 
 # typescript
 *.tsbuildinfo
@@ -41,3 +49,5 @@ app-example
 # generated native folders
 /ios
 /android
+frontend/ios
+frontend/android
